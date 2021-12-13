@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SalesCompanyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="agents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTypeAgent" Type="int" />
+    <Property Name="NameAgent" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="255" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+    <Property Name="LogoAgent" Type="nvarchar" MaxLength="255" />
+    <Property Name="LegalAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="Prioritet" Type="float" />
+    <Property Name="Director" Type="nvarchar" MaxLength="255" />
+    <Property Name="INN" Type="bigint" />
+    <Property Name="KPP" Type="bigint" />
+  </EntityType>
+  <EntityType Name="HistotyAgent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameAgent" Type="varchar" MaxLength="50" />
+    <Property Name="PrioritetOld" Type="varchar" MaxLength="50" />
+    <Property Name="PrioritetNew" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="TypeProduct" Type="nvarchar" MaxLength="255" />
+    <Property Name="idTypeProduct" Type="int" />
+    <Property Name="VendorCode" Type="bigint" />
+    <Property Name="NumberOfPeopleForProduction" Type="float" />
+    <Property Name="MinimumPriceforanAgent" Type="money" />
+  </EntityType>
+  <EntityType Name="productsale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="NameAgent" Type="nvarchar" MaxLength="255" />
+    <Property Name="idАгента" Type="int" />
+    <Property Name="DateProduct" Type="datetime" />
+    <Property Name="CountProductSale" Type="float" />
+    <Property Name="idProduct" Type="int" />
+  </EntityType>
+  <EntityType Name="type_agents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="type_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "SalesCompany.dbo.View_1" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="View_1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Тип агента" Type="nvarchar" MaxLength="255" />
+    <Property Name="Наименование агента" Type="nvarchar" MaxLength="255" />
+    <Property Name="Номер телефона" Type="nvarchar" MaxLength="255" />
+    <Property Name="Приоритет" Type="float" />
+    <Property Name="Скидка агента" Type="int" />
+    <Property Name="Количество продаж за год" Type="float" />
+    <Property Name="LogoAgent" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_agents_type_agents">
+    <End Role="type_agents" Type="Self.type_agents" Multiplicity="0..1" />
+    <End Role="agents" Type="Self.agents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_agents">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="agents">
+        <PropertyRef Name="idTypeAgent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_products_type_product">
+    <End Role="type_product" Type="Self.type_product" Multiplicity="0..1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="idTypeProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productsale_agents">
+    <End Role="agents" Type="Self.agents" Multiplicity="0..1" />
+    <End Role="productsale" Type="Self.productsale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="productsale">
+        <PropertyRef Name="idАгента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productsale_products">
+    <End Role="products" Type="Self.products" Multiplicity="0..1" />
+    <End Role="productsale" Type="Self.productsale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="productsale">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище SalesCompanyModelContainer">
+    <EntitySet Name="agents" EntityType="Self.agents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistotyAgent" EntityType="Self.HistotyAgent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productsale" EntityType="Self.productsale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_agents" EntityType="Self.type_agents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_product" EntityType="Self.type_product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_1" EntityType="Self.View_1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_1].[Id] AS [Id], 
+    [View_1].[Тип агента] AS [Тип агента], 
+    [View_1].[Наименование агента] AS [Наименование агента], 
+    [View_1].[Номер телефона] AS [Номер телефона], 
+    [View_1].[Приоритет] AS [Приоритет], 
+    [View_1].[Скидка агента] AS [Скидка агента], 
+    [View_1].[Количество продаж за год] AS [Количество продаж за год], 
+    [View_1].[LogoAgent] AS [LogoAgent]
+    FROM [dbo].[View_1] AS [View_1]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_agents_type_agents" Association="Self.FK_agents_type_agents">
+      <End Role="type_agents" EntitySet="type_agents" />
+      <End Role="agents" EntitySet="agents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_products_type_product" Association="Self.FK_products_type_product">
+      <End Role="type_product" EntitySet="type_product" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productsale_agents" Association="Self.FK_productsale_agents">
+      <End Role="agents" EntitySet="agents" />
+      <End Role="productsale" EntitySet="productsale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productsale_products" Association="Self.FK_productsale_products">
+      <End Role="products" EntitySet="products" />
+      <End Role="productsale" EntitySet="productsale" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

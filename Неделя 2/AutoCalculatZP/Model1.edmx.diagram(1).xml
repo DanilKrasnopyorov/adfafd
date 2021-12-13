@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de41aafc06f945d1a6363a43dde09d93" Name="Diagram1">
+        <EntityTypeShape EntityType="SalaryСalculationModel.Executers" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.Grade" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.HistoryTasks" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.Manager" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.Status" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.Tasks" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.Users" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalaryСalculationModel.WorkTypes" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Executers_Grade" ManuallyRouted="false" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Executers_Manager" ManuallyRouted="false" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Executers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Tasks_Executers" ManuallyRouted="false" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Manager_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Tasks_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="SalaryСalculationModel.FK_Tasks_WorkTypes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

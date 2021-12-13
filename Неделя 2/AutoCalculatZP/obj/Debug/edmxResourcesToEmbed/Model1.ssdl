@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SalaryСalculationModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Executers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagerID" Type="int" Nullable="false" />
+    <Property Name="GradeID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameGrade" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistoryTasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdExecuterOld" Type="int" />
+    <Property Name="IdExecuterNew" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Task" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnalysisCoefficient" Type="float" Nullable="false" />
+    <Property Name="DifficultyCoefficient" Type="float" Nullable="false" />
+    <Property Name="InstallationCoefficient" Type="float" Nullable="false" />
+    <Property Name="JuniorMinimum" Type="float" Nullable="false" />
+    <Property Name="MiddleMinimum" Type="float" Nullable="false" />
+    <Property Name="SeniorMinimum" Type="float" Nullable="false" />
+    <Property Name="SupportCoefficient" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="TimeCoefficient" Type="datetime" Nullable="false" />
+    <Property Name="ToMoneyCoefficient" Type="float" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameStatus" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExecuterID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreateDateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Deadline" Type="datetime" Nullable="false" />
+    <Property Name="Difficulty" Type="int" Nullable="false" />
+    <Property Name="Time" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="WorkTypeID" Type="int" Nullable="false" />
+    <Property Name="CompletedDateTime" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsDeleted" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Middlename" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsDeleted" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "SalaryСalculation.dbo.V_ExecutersDetails" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="V_ExecutersDetails">
+    <Key>
+      <PropertyRef Name="Middlename" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="Login" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="NameGrade" />
+      <PropertyRef Name="NameStatus" />
+      <PropertyRef Name="ManagerMiddlename" />
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="ManagerLastname" />
+    </Key>
+    <Property Name="Middlename" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameGrade" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameStatus" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Count" Type="int" />
+    <Property Name="ManagerMiddlename" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ManagerName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ManagerLastname" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "SalaryСalculation.dbo.V_ExecutersDetails1" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="V_ExecutersDetails1">
+    <Key>
+      <PropertyRef Name="Middlename" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="Login" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="NameGrade" />
+      <PropertyRef Name="ManagerMiddlename" />
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="ManagerLastname" />
+    </Key>
+    <Property Name="Middlename" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="NameGrade" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Запланированно" Type="int" />
+    <Property Name="Исполняется" Type="int" />
+    <Property Name="Завершено" Type="int" />
+    <Property Name="Отменено" Type="int" />
+    <Property Name="ManagerMiddlename" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ManagerName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ManagerLastname" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Executers_Grade">
+    <End Role="Grade" Type="Self.Grade" Multiplicity="1" />
+    <End Role="Executers" Type="Self.Executers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grade">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Executers">
+        <PropertyRef Name="GradeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Executers_Manager">
+    <End Role="Manager" Type="Self.Manager" Multiplicity="1" />
+    <End Role="Executers" Type="Self.Executers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manager">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Executers">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Executers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Executers" Type="Self.Executers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Executers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manager_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Manager" Type="Self.Manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manager">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Executers">
+    <End Role="Executers" Type="Self.Executers" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Executers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="ExecuterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_WorkTypes">
+    <End Role="WorkTypes" Type="Self.WorkTypes" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="WorkTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище SalaryСalculationModelContainer">
+    <EntitySet Name="Executers" EntityType="Self.Executers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoryTasks" EntityType="Self.HistoryTasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkTypes" EntityType="Self.WorkTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_ExecutersDetails" EntityType="Self.V_ExecutersDetails" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ExecutersDetails].[Middlename] AS [Middlename], 
+    [V_ExecutersDetails].[Name] AS [Name], 
+    [V_ExecutersDetails].[LastName] AS [LastName], 
+    [V_ExecutersDetails].[Login] AS [Login], 
+    [V_ExecutersDetails].[Password] AS [Password], 
+    [V_ExecutersDetails].[NameGrade] AS [NameGrade], 
+    [V_ExecutersDetails].[NameStatus] AS [NameStatus], 
+    [V_ExecutersDetails].[Count] AS [Count], 
+    [V_ExecutersDetails].[ManagerMiddlename] AS [ManagerMiddlename], 
+    [V_ExecutersDetails].[ManagerName] AS [ManagerName], 
+    [V_ExecutersDetails].[ManagerLastname] AS [ManagerLastname]
+    FROM [dbo].[V_ExecutersDetails] AS [V_ExecutersDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_ExecutersDetails1" EntityType="Self.V_ExecutersDetails1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_ExecutersDetails1].[Middlename] AS [Middlename], 
+    [V_ExecutersDetails1].[Name] AS [Name], 
+    [V_ExecutersDetails1].[LastName] AS [LastName], 
+    [V_ExecutersDetails1].[Login] AS [Login], 
+    [V_ExecutersDetails1].[Password] AS [Password], 
+    [V_ExecutersDetails1].[NameGrade] AS [NameGrade], 
+    [V_ExecutersDetails1].[Запланированно] AS [Запланированно], 
+    [V_ExecutersDetails1].[Исполняется] AS [Исполняется], 
+    [V_ExecutersDetails1].[Завершено] AS [Завершено], 
+    [V_ExecutersDetails1].[Отменено] AS [Отменено], 
+    [V_ExecutersDetails1].[ManagerMiddlename] AS [ManagerMiddlename], 
+    [V_ExecutersDetails1].[ManagerName] AS [ManagerName], 
+    [V_ExecutersDetails1].[ManagerLastname] AS [ManagerLastname]
+    FROM [dbo].[V_ExecutersDetails1] AS [V_ExecutersDetails1]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Executers_Grade" Association="Self.FK_Executers_Grade">
+      <End Role="Grade" EntitySet="Grade" />
+      <End Role="Executers" EntitySet="Executers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Executers_Manager" Association="Self.FK_Executers_Manager">
+      <End Role="Manager" EntitySet="Manager" />
+      <End Role="Executers" EntitySet="Executers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Executers_Users" Association="Self.FK_Executers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Executers" EntitySet="Executers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manager_Users" Association="Self.FK_Manager_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Manager" EntitySet="Manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Executers" Association="Self.FK_Tasks_Executers">
+      <End Role="Executers" EntitySet="Executers" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Status" Association="Self.FK_Tasks_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_WorkTypes" Association="Self.FK_Tasks_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

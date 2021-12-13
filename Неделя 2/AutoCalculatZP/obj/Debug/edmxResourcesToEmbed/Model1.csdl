@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalaryСalculationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Executers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManagerID" Type="Int32" Nullable="false" />
+    <Property Name="GradeID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Grade" Relationship="Self.FK_Executers_Grade" FromRole="Executers" ToRole="Grade" />
+    <NavigationProperty Name="Manager" Relationship="Self.FK_Executers_Manager" FromRole="Executers" ToRole="Manager" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Executers_Users" FromRole="Executers" ToRole="Users" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_Executers" FromRole="Executers" ToRole="Tasks" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameGrade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Executers" Relationship="Self.FK_Executers_Grade" FromRole="Grade" ToRole="Executers" />
+  </EntityType>
+  <EntityType Name="HistoryTasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdExecuterOld" Type="Int32" />
+    <Property Name="IdExecuterNew" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Task" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnalysisCoefficient" Type="Double" Nullable="false" />
+    <Property Name="DifficultyCoefficient" Type="Double" Nullable="false" />
+    <Property Name="InstallationCoefficient" Type="Double" Nullable="false" />
+    <Property Name="JuniorMinimum" Type="Double" Nullable="false" />
+    <Property Name="MiddleMinimum" Type="Double" Nullable="false" />
+    <Property Name="SeniorMinimum" Type="Double" Nullable="false" />
+    <Property Name="SupportCoefficient" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimeCoefficient" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ToMoneyCoefficient" Type="Double" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Executers" Relationship="Self.FK_Executers_Manager" FromRole="Manager" ToRole="Executers" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Manager_Users" FromRole="Manager" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_Status" FromRole="Status" ToRole="Tasks" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExecuterID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Deadline" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Difficulty" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="WorkTypeID" Type="Int32" Nullable="false" />
+    <Property Name="CompletedDateTime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Executers" Relationship="Self.FK_Tasks_Executers" FromRole="Tasks" ToRole="Executers" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_Tasks_Status" FromRole="Tasks" ToRole="Status" />
+    <NavigationProperty Name="WorkTypes" Relationship="Self.FK_Tasks_WorkTypes" FromRole="Tasks" ToRole="WorkTypes" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Middlename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Executers" Relationship="Self.FK_Executers_Users" FromRole="Users" ToRole="Executers" />
+    <NavigationProperty Name="Manager" Relationship="Self.FK_Manager_Users" FromRole="Users" ToRole="Manager" />
+  </EntityType>
+  <EntityType Name="WorkTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_WorkTypes" FromRole="WorkTypes" ToRole="Tasks" />
+  </EntityType>
+  <EntityType Name="V_ExecutersDetails">
+    <Key>
+      <PropertyRef Name="Middlename" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="Login" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="NameGrade" />
+      <PropertyRef Name="NameStatus" />
+      <PropertyRef Name="ManagerMiddlename" />
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="ManagerLastname" />
+    </Key>
+    <Property Name="Middlename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameGrade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="ManagerMiddlename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ManagerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ManagerLastname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ExecutersDetails1">
+    <Key>
+      <PropertyRef Name="Middlename" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="Login" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="NameGrade" />
+      <PropertyRef Name="ManagerMiddlename" />
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="ManagerLastname" />
+    </Key>
+    <Property Name="Middlename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameGrade" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Запланированно" Type="Int32" />
+    <Property Name="Исполняется" Type="Int32" />
+    <Property Name="Завершено" Type="Int32" />
+    <Property Name="Отменено" Type="Int32" />
+    <Property Name="ManagerMiddlename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ManagerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ManagerLastname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Executers_Grade">
+    <End Role="Grade" Type="Self.Grade" Multiplicity="1" />
+    <End Role="Executers" Type="Self.Executers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grade">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Executers">
+        <PropertyRef Name="GradeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Executers_Manager">
+    <End Role="Manager" Type="Self.Manager" Multiplicity="1" />
+    <End Role="Executers" Type="Self.Executers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manager">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Executers">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Executers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Executers" Type="Self.Executers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Executers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Executers">
+    <End Role="Executers" Type="Self.Executers" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Executers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="ExecuterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manager_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Manager" Type="Self.Manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manager">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_WorkTypes">
+    <End Role="WorkTypes" Type="Self.WorkTypes" Multiplicity="1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="WorkTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SalaryСalculationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Executers" EntityType="Self.Executers" />
+    <EntitySet Name="Grade" EntityType="Self.Grade" />
+    <EntitySet Name="HistoryTasks" EntityType="Self.HistoryTasks" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="WorkTypes" EntityType="Self.WorkTypes" />
+    <EntitySet Name="V_ExecutersDetails" EntityType="Self.V_ExecutersDetails" />
+    <EntitySet Name="V_ExecutersDetails1" EntityType="Self.V_ExecutersDetails1" />
+    <AssociationSet Name="FK_Executers_Grade" Association="Self.FK_Executers_Grade">
+      <End Role="Grade" EntitySet="Grade" />
+      <End Role="Executers" EntitySet="Executers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Executers_Manager" Association="Self.FK_Executers_Manager">
+      <End Role="Manager" EntitySet="Manager" />
+      <End Role="Executers" EntitySet="Executers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Executers_Users" Association="Self.FK_Executers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Executers" EntitySet="Executers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Executers" Association="Self.FK_Tasks_Executers">
+      <End Role="Executers" EntitySet="Executers" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manager_Users" Association="Self.FK_Manager_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Manager" EntitySet="Manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Status" Association="Self.FK_Tasks_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_WorkTypes" Association="Self.FK_Tasks_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SalaryСalculationModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SalaryСalculationModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

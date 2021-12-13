@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f54b28bd95148409d4023aa08e16795" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="SalesCompanyModel.agents" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="SalesCompanyModel.HistotyAgent" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SalesCompanyModel.products" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="SalesCompanyModel.productsale" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="SalesCompanyModel.type_agents" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="SalesCompanyModel.type_product" Width="1.5" PointX="0.75" PointY="6" />
+        <AssociationConnector Association="SalesCompanyModel.FK_agents_type_agents" />
+        <AssociationConnector Association="SalesCompanyModel.FK_productsale_agents" />
+        <AssociationConnector Association="SalesCompanyModel.FK_products_type_product" />
+        <AssociationConnector Association="SalesCompanyModel.FK_productsale_products" />
+        <EntityTypeShape EntityType="SalesCompanyModel.View_1" Width="1.5" PointX="8.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

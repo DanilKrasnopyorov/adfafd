@@ -1,0 +1,172 @@
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe.config
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.pdb
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csprojAssemblyReference.cache
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\Login_page.g.cs
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\MainWindow.g.cs
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\App.g.cs
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.cache
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.lref
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\Login_page.baml
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\MainWindow.baml
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.g.resources
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.Properties.Resources.resources
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.GenerateResource.cache
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CoreCompileInputs.cache
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.exe
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.pdb
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\Menu_Page.g.cs
+c:\profiles\pr118ignatev\source\repos\AutoCalculatZP\AutoCalculatZP\obj\Debug\Menu_Page.baml
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe.config
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.pdb
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csprojAssemblyReference.cache
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\Login_page.g.cs
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\MainWindow.g.cs
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\Menu_Page.g.cs
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\App.g.cs
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.cache
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.lref
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\Login_page.baml
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\MainWindow.baml
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\Menu_Page.baml
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.g.resources
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.Properties.Resources.resources
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.GenerateResource.cache
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CoreCompileInputs.cache
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.exe
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.pdb
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.dll
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.dll
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.xml
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.xml
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\bin\Debug\ru\EntityFramework.resources.dll
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_Content.g.cs
+W:\!Личная\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CopyComplete
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe.config
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\AutoCalculatZP.pdb
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.dll
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.xml
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.AssemblyReference.cache
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.SuggestedBindingRedirects.cache
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\Login_page.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\MainWindow.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\Menu_Page.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\App.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_Content.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.cache
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.lref
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\Login_page.baml
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\MainWindow.baml
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\Menu_Page.baml
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.g.resources
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.Properties.Resources.resources
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.GenerateResource.cache
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CoreCompileInputs.cache
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CopyComplete
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.exe
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\AutoCalculatZP.pdb
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\Tasks_Page.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\AutoCalculatZP\AutoCalculatZP\obj\Debug\Tasks_Page.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csprojAssemblyReference.cache
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\EditTasks_Page.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Executers_Page.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Login_page.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\MainWindow.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Menu_Page.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Tasks_Page.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\App.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP_Content.g.cs
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.cache
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.lref
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.exe
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.pdb
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe.config
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\AutoCalculatZP.pdb
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.dll
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.dll
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.xml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.xml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\bin\Debug\ru\EntityFramework.resources.dll
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\EditTasks_Page.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Executers_Page.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Login_page.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\MainWindow.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Menu_Page.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Tasks_Page.baml
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.g.resources
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.Properties.Resources.resources
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.GenerateResource.cache
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CoreCompileInputs.cache
+W:\!Личная\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CopyComplete
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.AssemblyReference.cache
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.SuggestedBindingRedirects.cache
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\EditTasks_Page.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Executers_Page.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Login_page.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\MainWindow.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Menu_Page.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Tasks_Page.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\App.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP_Content.g.cs
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.cache
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.lref
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.exe
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.pdb
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe.config
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\AutoCalculatZP.pdb
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.dll
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.dll
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.xml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.xml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\bin\Debug\ru\EntityFramework.resources.dll
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\EditTasks_Page.baml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Executers_Page.baml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Login_page.baml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\MainWindow.baml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Menu_Page.baml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\Tasks_Page.baml
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.g.resources
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.Properties.Resources.resources
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.GenerateResource.cache
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CoreCompileInputs.cache
+E:\Практика\AutoCalculatZP2\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CopyComplete
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe.config
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\AutoCalculatZP.exe
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\AutoCalculatZP.pdb
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\EntityFramework.dll
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.dll
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\EntityFramework.xml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\EntityFramework.SqlServer.xml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\bin\Debug\ru\EntityFramework.resources.dll
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.AssemblyReference.cache
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.SuggestedBindingRedirects.cache
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\EditTasks_Page.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Executers_Page.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\MainWindow.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Menu_Page.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Tasks_Page.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\App.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP_Content.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.cache
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP_MarkupCompile.lref
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\EditTasks_Page.baml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Executers_Page.baml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\MainWindow.baml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Menu_Page.baml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Tasks_Page.baml
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.g.resources
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.Properties.Resources.resources
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.GenerateResource.cache
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CoreCompileInputs.cache
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.csproj.CopyComplete
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.exe
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\AutoCalculatZP.pdb
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Login_Window.g.cs
+E:\Практика\AutoCalculatZP3\AutoCalculatZP\obj\Debug\Login_Window.baml

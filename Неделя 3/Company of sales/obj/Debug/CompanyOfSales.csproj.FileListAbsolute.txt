@@ -1,0 +1,56 @@
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\QualityLeGang.exe.config
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\QualityLeGang.exe
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\QualityLeGang.pdb
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\EntityFramework.dll
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\EntityFramework.xml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\CompanyOfSales.csproj.AssemblyReference.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\CompanyOfSales.csproj.SuggestedBindingRedirects.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\AddAgentPage.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\AgentPage.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\MainWindow.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\App.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang_Content.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang_MarkupCompile.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang_MarkupCompile.lref
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\App.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\AddAgentPage.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\AgentPage.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\MainWindow.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang.g.resources
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang.Properties.Resources.resources
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\CompanyOfSales.csproj.GenerateResource.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\CompanyOfSales.csproj.CoreCompileInputs.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\CompanyOfSales.csproj.CopyComplete
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang.exe
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\2 сессия\QualityLeGang\QualityLeGang\obj\Debug\QualityLeGang.pdb
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\QualityLeGang.exe.config
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\QualityLeGang.exe
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\QualityLeGang.pdb
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\EntityFramework.dll
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\EntityFramework.xml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\CompanyOfSales.csproj.AssemblyReference.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\CompanyOfSales.csproj.SuggestedBindingRedirects.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\AddAgentPage.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\AgentPage.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\MainWindow.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\App.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang_Content.g.cs
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang_MarkupCompile.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang_MarkupCompile.lref
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\App.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\AddAgentPage.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\AgentPage.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\MainWindow.baml
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang.g.resources
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang.Properties.Resources.resources
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\CompanyOfSales.csproj.GenerateResource.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\CompanyOfSales.csproj.CoreCompileInputs.cache
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\CompanyOfSales.csproj.CopyComplete
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang.exe
+C:\Users\krasn\OneDrive\Рабочий стол\Новая папка\Новая папка\Company of sales\obj\Debug\QualityLeGang.pdb

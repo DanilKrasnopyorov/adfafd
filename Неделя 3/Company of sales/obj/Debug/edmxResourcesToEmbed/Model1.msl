@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SalesCompanyModelContainer" CdmEntityContainer="SalesCompanyEntities">
+    <EntitySetMapping Name="agents">
+      <EntityTypeMapping TypeName="SalesCompanyModel.agents">
+        <MappingFragment StoreEntitySet="agents">
+          <ScalarProperty Name="KPP" ColumnName="KPP" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Prioritet" ColumnName="Prioritet" />
+          <ScalarProperty Name="LegalAddress" ColumnName="LegalAddress" />
+          <ScalarProperty Name="LogoAgent" ColumnName="LogoAgent" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="NameAgent" ColumnName="NameAgent" />
+          <ScalarProperty Name="idTypeAgent" ColumnName="idTypeAgent" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistotyAgent">
+      <EntityTypeMapping TypeName="SalesCompanyModel.HistotyAgent">
+        <MappingFragment StoreEntitySet="HistotyAgent">
+          <ScalarProperty Name="PrioritetNew" ColumnName="PrioritetNew" />
+          <ScalarProperty Name="PrioritetOld" ColumnName="PrioritetOld" />
+          <ScalarProperty Name="NameAgent" ColumnName="NameAgent" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="SalesCompanyModel.products">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="MinimumPriceforanAgent" ColumnName="MinimumPriceforanAgent" />
+          <ScalarProperty Name="NumberOfPeopleForProduction" ColumnName="NumberOfPeopleForProduction" />
+          <ScalarProperty Name="VendorCode" ColumnName="VendorCode" />
+          <ScalarProperty Name="idTypeProduct" ColumnName="idTypeProduct" />
+          <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productsale">
+      <EntityTypeMapping TypeName="SalesCompanyModel.productsale">
+        <MappingFragment StoreEntitySet="productsale">
+          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+          <ScalarProperty Name="CountProductSale" ColumnName="CountProductSale" />
+          <ScalarProperty Name="DateProduct" ColumnName="DateProduct" />
+          <ScalarProperty Name="idАгента" ColumnName="idАгента" />
+          <ScalarProperty Name="NameAgent" ColumnName="NameAgent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_agents">
+      <EntityTypeMapping TypeName="SalesCompanyModel.type_agents">
+        <MappingFragment StoreEntitySet="type_agents">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_product">
+      <EntityTypeMapping TypeName="SalesCompanyModel.type_product">
+        <MappingFragment StoreEntitySet="type_product">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_1">
+      <EntityTypeMapping TypeName="SalesCompanyModel.View_1">
+        <MappingFragment StoreEntitySet="View_1">
+          <ScalarProperty Name="LogoAgent" ColumnName="LogoAgent" />
+          <ScalarProperty Name="Количество_продаж_за_год" ColumnName="Количество продаж за год" />
+          <ScalarProperty Name="Скидка_агента" ColumnName="Скидка агента" />
+          <ScalarProperty Name="Приоритет" ColumnName="Приоритет" />
+          <ScalarProperty Name="Номер_телефона" ColumnName="Номер телефона" />
+          <ScalarProperty Name="Наименование_агента" ColumnName="Наименование агента" />
+          <ScalarProperty Name="Тип_агента" ColumnName="Тип агента" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

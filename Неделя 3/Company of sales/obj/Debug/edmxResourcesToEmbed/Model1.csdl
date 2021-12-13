@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesCompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SalesCompanyEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SalesCompanyModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SalesCompanyModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="agents" EntityType="SalesCompanyModel.agents" />
+    <EntitySet Name="HistotyAgent" EntityType="SalesCompanyModel.HistotyAgent" />
+    <EntitySet Name="products" EntityType="SalesCompanyModel.products" />
+    <EntitySet Name="productsale" EntityType="SalesCompanyModel.productsale" />
+    <EntitySet Name="type_agents" EntityType="SalesCompanyModel.type_agents" />
+    <EntitySet Name="type_product" EntityType="SalesCompanyModel.type_product" />
+    <AssociationSet Name="FK_agents_type_agents" Association="SalesCompanyModel.FK_agents_type_agents">
+      <End Role="type_agents" EntitySet="type_agents" />
+      <End Role="agents" EntitySet="agents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productsale_agents" Association="SalesCompanyModel.FK_productsale_agents">
+      <End Role="agents" EntitySet="agents" />
+      <End Role="productsale" EntitySet="productsale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_products_type_product" Association="SalesCompanyModel.FK_products_type_product">
+      <End Role="type_product" EntitySet="type_product" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productsale_products" Association="SalesCompanyModel.FK_productsale_products">
+      <End Role="products" EntitySet="products" />
+      <End Role="productsale" EntitySet="productsale" />
+    </AssociationSet>
+    <EntitySet Name="View_1" EntityType="SalesCompanyModel.View_1" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="agents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idTypeAgent" Type="Int32" />
+    <Property Name="NameAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LogoAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LegalAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Prioritet" Type="Double" />
+    <Property Name="Director" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="INN" Type="Int64" />
+    <Property Name="KPP" Type="Int64" />
+    <NavigationProperty Name="type_agents" Relationship="SalesCompanyModel.FK_agents_type_agents" FromRole="agents" ToRole="type_agents" />
+    <NavigationProperty Name="productsale" Relationship="SalesCompanyModel.FK_productsale_agents" FromRole="agents" ToRole="productsale" />
+  </EntityType>
+  <EntityType Name="HistotyAgent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameAgent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrioritetOld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrioritetNew" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TypeProduct" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="idTypeProduct" Type="Int32" />
+    <Property Name="VendorCode" Type="Int64" />
+    <Property Name="NumberOfPeopleForProduction" Type="Double" />
+    <Property Name="MinimumPriceforanAgent" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="type_product" Relationship="SalesCompanyModel.FK_products_type_product" FromRole="products" ToRole="type_product" />
+    <NavigationProperty Name="productsale" Relationship="SalesCompanyModel.FK_productsale_products" FromRole="products" ToRole="productsale" />
+  </EntityType>
+  <EntityType Name="productsale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NameAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="idАгента" Type="Int32" />
+    <Property Name="DateProduct" Type="DateTime" Precision="3" />
+    <Property Name="CountProductSale" Type="Double" />
+    <Property Name="idProduct" Type="Int32" />
+    <NavigationProperty Name="agents" Relationship="SalesCompanyModel.FK_productsale_agents" FromRole="productsale" ToRole="agents" />
+    <NavigationProperty Name="products" Relationship="SalesCompanyModel.FK_productsale_products" FromRole="productsale" ToRole="products" />
+  </EntityType>
+  <EntityType Name="type_agents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="agents" Relationship="SalesCompanyModel.FK_agents_type_agents" FromRole="type_agents" ToRole="agents" />
+  </EntityType>
+  <EntityType Name="type_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="products" Relationship="SalesCompanyModel.FK_products_type_product" FromRole="type_product" ToRole="products" />
+  </EntityType>
+  <Association Name="FK_agents_type_agents">
+    <End Type="SalesCompanyModel.type_agents" Role="type_agents" Multiplicity="0..1" />
+    <End Type="SalesCompanyModel.agents" Role="agents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_agents">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="agents">
+        <PropertyRef Name="idTypeAgent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productsale_agents">
+    <End Type="SalesCompanyModel.agents" Role="agents" Multiplicity="0..1" />
+    <End Type="SalesCompanyModel.productsale" Role="productsale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="productsale">
+        <PropertyRef Name="idАгента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_products_type_product">
+    <End Type="SalesCompanyModel.type_product" Role="type_product" Multiplicity="0..1" />
+    <End Type="SalesCompanyModel.products" Role="products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="idTypeProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productsale_products">
+    <End Type="SalesCompanyModel.products" Role="products" Multiplicity="0..1" />
+    <End Type="SalesCompanyModel.productsale" Role="productsale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="productsale">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Тип_агента" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Наименование_агента" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Номер_телефона" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Приоритет" Type="Double" />
+    <Property Name="Скидка_агента" Type="Int32" />
+    <Property Name="Количество_продаж_за_год" Type="Double" />
+    <Property Name="LogoAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

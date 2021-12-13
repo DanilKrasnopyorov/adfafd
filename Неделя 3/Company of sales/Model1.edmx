@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище SalesCompanyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTypeAgent" Type="int" />
+          <Property Name="NameAgent" Type="nvarchar" MaxLength="255" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogoAgent" Type="nvarchar" MaxLength="255" />
+          <Property Name="LegalAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Prioritet" Type="float" />
+          <Property Name="Director" Type="nvarchar" MaxLength="255" />
+          <Property Name="INN" Type="bigint" />
+          <Property Name="KPP" Type="bigint" />
+        </EntityType>
+        <EntityType Name="HistotyAgent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameAgent" Type="varchar" MaxLength="50" />
+          <Property Name="PrioritetOld" Type="varchar" MaxLength="50" />
+          <Property Name="PrioritetNew" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="TypeProduct" Type="nvarchar" MaxLength="255" />
+          <Property Name="idTypeProduct" Type="int" />
+          <Property Name="VendorCode" Type="bigint" />
+          <Property Name="NumberOfPeopleForProduction" Type="float" />
+          <Property Name="MinimumPriceforanAgent" Type="money" />
+        </EntityType>
+        <EntityType Name="productsale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="NameAgent" Type="nvarchar" MaxLength="255" />
+          <Property Name="idАгента" Type="int" />
+          <Property Name="DateProduct" Type="datetime" />
+          <Property Name="CountProductSale" Type="float" />
+          <Property Name="idProduct" Type="int" />
+        </EntityType>
+        <EntityType Name="type_agents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="type_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "SalesCompany.dbo.View_1" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="View_1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Тип агента" Type="nvarchar" MaxLength="255" />
+          <Property Name="Наименование агента" Type="nvarchar" MaxLength="255" />
+          <Property Name="Номер телефона" Type="nvarchar" MaxLength="255" />
+          <Property Name="Приоритет" Type="float" />
+          <Property Name="Скидка агента" Type="int" />
+          <Property Name="Количество продаж за год" Type="float" />
+          <Property Name="LogoAgent" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_agents_type_agents">
+          <End Role="type_agents" Type="Self.type_agents" Multiplicity="0..1" />
+          <End Role="agents" Type="Self.agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_agents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="agents">
+              <PropertyRef Name="idTypeAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_products_type_product">
+          <End Role="type_product" Type="Self.type_product" Multiplicity="0..1" />
+          <End Role="products" Type="Self.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="idTypeProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_productsale_agents">
+          <End Role="agents" Type="Self.agents" Multiplicity="0..1" />
+          <End Role="productsale" Type="Self.productsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="productsale">
+              <PropertyRef Name="idАгента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_productsale_products">
+          <End Role="products" Type="Self.products" Multiplicity="0..1" />
+          <End Role="productsale" Type="Self.productsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productsale">
+              <PropertyRef Name="idProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище SalesCompanyModelContainer">
+          <EntitySet Name="agents" EntityType="Self.agents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistotyAgent" EntityType="Self.HistotyAgent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productsale" EntityType="Self.productsale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_agents" EntityType="Self.type_agents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_product" EntityType="Self.type_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_1" EntityType="Self.View_1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_1].[Id] AS [Id], 
+    [View_1].[Тип агента] AS [Тип агента], 
+    [View_1].[Наименование агента] AS [Наименование агента], 
+    [View_1].[Номер телефона] AS [Номер телефона], 
+    [View_1].[Приоритет] AS [Приоритет], 
+    [View_1].[Скидка агента] AS [Скидка агента], 
+    [View_1].[Количество продаж за год] AS [Количество продаж за год], 
+    [View_1].[LogoAgent] AS [LogoAgent]
+    FROM [dbo].[View_1] AS [View_1]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_agents_type_agents" Association="Self.FK_agents_type_agents">
+            <End Role="type_agents" EntitySet="type_agents" />
+            <End Role="agents" EntitySet="agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_products_type_product" Association="Self.FK_products_type_product">
+            <End Role="type_product" EntitySet="type_product" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_productsale_agents" Association="Self.FK_productsale_agents">
+            <End Role="agents" EntitySet="agents" />
+            <End Role="productsale" EntitySet="productsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_productsale_products" Association="Self.FK_productsale_products">
+            <End Role="products" EntitySet="products" />
+            <End Role="productsale" EntitySet="productsale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SalesCompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SalesCompanyEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SalesCompanyModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SalesCompanyModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="agents" EntityType="SalesCompanyModel.agents" />
+          <EntitySet Name="HistotyAgent" EntityType="SalesCompanyModel.HistotyAgent" />
+          <EntitySet Name="products" EntityType="SalesCompanyModel.products" />
+          <EntitySet Name="productsale" EntityType="SalesCompanyModel.productsale" />
+          <EntitySet Name="type_agents" EntityType="SalesCompanyModel.type_agents" />
+          <EntitySet Name="type_product" EntityType="SalesCompanyModel.type_product" />
+          <AssociationSet Name="FK_agents_type_agents" Association="SalesCompanyModel.FK_agents_type_agents">
+            <End Role="type_agents" EntitySet="type_agents" />
+            <End Role="agents" EntitySet="agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_productsale_agents" Association="SalesCompanyModel.FK_productsale_agents">
+            <End Role="agents" EntitySet="agents" />
+            <End Role="productsale" EntitySet="productsale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_products_type_product" Association="SalesCompanyModel.FK_products_type_product">
+            <End Role="type_product" EntitySet="type_product" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_productsale_products" Association="SalesCompanyModel.FK_productsale_products">
+            <End Role="products" EntitySet="products" />
+            <End Role="productsale" EntitySet="productsale" />
+          </AssociationSet>
+          <EntitySet Name="View_1" EntityType="SalesCompanyModel.View_1" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="agents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTypeAgent" Type="Int32" />
+          <Property Name="NameAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogoAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LegalAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Prioritet" Type="Double" />
+          <Property Name="Director" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="INN" Type="Int64" />
+          <Property Name="KPP" Type="Int64" />
+          <NavigationProperty Name="type_agents" Relationship="SalesCompanyModel.FK_agents_type_agents" FromRole="agents" ToRole="type_agents" />
+          <NavigationProperty Name="productsale" Relationship="SalesCompanyModel.FK_productsale_agents" FromRole="agents" ToRole="productsale" />
+        </EntityType>
+        <EntityType Name="HistotyAgent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameAgent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrioritetOld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrioritetNew" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TypeProduct" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idTypeProduct" Type="Int32" />
+          <Property Name="VendorCode" Type="Int64" />
+          <Property Name="NumberOfPeopleForProduction" Type="Double" />
+          <Property Name="MinimumPriceforanAgent" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="type_product" Relationship="SalesCompanyModel.FK_products_type_product" FromRole="products" ToRole="type_product" />
+          <NavigationProperty Name="productsale" Relationship="SalesCompanyModel.FK_productsale_products" FromRole="products" ToRole="productsale" />
+        </EntityType>
+        <EntityType Name="productsale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NameAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idАгента" Type="Int32" />
+          <Property Name="DateProduct" Type="DateTime" Precision="3" />
+          <Property Name="CountProductSale" Type="Double" />
+          <Property Name="idProduct" Type="Int32" />
+          <NavigationProperty Name="agents" Relationship="SalesCompanyModel.FK_productsale_agents" FromRole="productsale" ToRole="agents" />
+          <NavigationProperty Name="products" Relationship="SalesCompanyModel.FK_productsale_products" FromRole="productsale" ToRole="products" />
+        </EntityType>
+        <EntityType Name="type_agents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="agents" Relationship="SalesCompanyModel.FK_agents_type_agents" FromRole="type_agents" ToRole="agents" />
+        </EntityType>
+        <EntityType Name="type_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="products" Relationship="SalesCompanyModel.FK_products_type_product" FromRole="type_product" ToRole="products" />
+        </EntityType>
+        <Association Name="FK_agents_type_agents">
+          <End Type="SalesCompanyModel.type_agents" Role="type_agents" Multiplicity="0..1" />
+          <End Type="SalesCompanyModel.agents" Role="agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_agents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="agents">
+              <PropertyRef Name="idTypeAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_productsale_agents">
+          <End Type="SalesCompanyModel.agents" Role="agents" Multiplicity="0..1" />
+          <End Type="SalesCompanyModel.productsale" Role="productsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="productsale">
+              <PropertyRef Name="idАгента" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_products_type_product">
+          <End Type="SalesCompanyModel.type_product" Role="type_product" Multiplicity="0..1" />
+          <End Type="SalesCompanyModel.products" Role="products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="idTypeProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_productsale_products">
+          <End Type="SalesCompanyModel.products" Role="products" Multiplicity="0..1" />
+          <End Type="SalesCompanyModel.productsale" Role="productsale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productsale">
+              <PropertyRef Name="idProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="View_1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Тип_агента" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Наименование_агента" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Номер_телефона" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Приоритет" Type="Double" />
+          <Property Name="Скидка_агента" Type="Int32" />
+          <Property Name="Количество_продаж_за_год" Type="Double" />
+          <Property Name="LogoAgent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SalesCompanyModelContainer" CdmEntityContainer="SalesCompanyEntities">
+          <EntitySetMapping Name="agents">
+            <EntityTypeMapping TypeName="SalesCompanyModel.agents">
+              <MappingFragment StoreEntitySet="agents">
+                <ScalarProperty Name="KPP" ColumnName="KPP" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="Director" ColumnName="Director" />
+                <ScalarProperty Name="Prioritet" ColumnName="Prioritet" />
+                <ScalarProperty Name="LegalAddress" ColumnName="LegalAddress" />
+                <ScalarProperty Name="LogoAgent" ColumnName="LogoAgent" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="NameAgent" ColumnName="NameAgent" />
+                <ScalarProperty Name="idTypeAgent" ColumnName="idTypeAgent" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistotyAgent">
+            <EntityTypeMapping TypeName="SalesCompanyModel.HistotyAgent">
+              <MappingFragment StoreEntitySet="HistotyAgent">
+                <ScalarProperty Name="PrioritetNew" ColumnName="PrioritetNew" />
+                <ScalarProperty Name="PrioritetOld" ColumnName="PrioritetOld" />
+                <ScalarProperty Name="NameAgent" ColumnName="NameAgent" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="SalesCompanyModel.products">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="MinimumPriceforanAgent" ColumnName="MinimumPriceforanAgent" />
+                <ScalarProperty Name="NumberOfPeopleForProduction" ColumnName="NumberOfPeopleForProduction" />
+                <ScalarProperty Name="VendorCode" ColumnName="VendorCode" />
+                <ScalarProperty Name="idTypeProduct" ColumnName="idTypeProduct" />
+                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productsale">
+            <EntityTypeMapping TypeName="SalesCompanyModel.productsale">
+              <MappingFragment StoreEntitySet="productsale">
+                <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+                <ScalarProperty Name="CountProductSale" ColumnName="CountProductSale" />
+                <ScalarProperty Name="DateProduct" ColumnName="DateProduct" />
+                <ScalarProperty Name="idАгента" ColumnName="idАгента" />
+                <ScalarProperty Name="NameAgent" ColumnName="NameAgent" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_agents">
+            <EntityTypeMapping TypeName="SalesCompanyModel.type_agents">
+              <MappingFragment StoreEntitySet="type_agents">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_product">
+            <EntityTypeMapping TypeName="SalesCompanyModel.type_product">
+              <MappingFragment StoreEntitySet="type_product">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_1">
+            <EntityTypeMapping TypeName="SalesCompanyModel.View_1">
+              <MappingFragment StoreEntitySet="View_1">
+                <ScalarProperty Name="LogoAgent" ColumnName="LogoAgent" />
+                <ScalarProperty Name="Количество_продаж_за_год" ColumnName="Количество продаж за год" />
+                <ScalarProperty Name="Скидка_агента" ColumnName="Скидка агента" />
+                <ScalarProperty Name="Приоритет" ColumnName="Приоритет" />
+                <ScalarProperty Name="Номер_телефона" ColumnName="Номер телефона" />
+                <ScalarProperty Name="Наименование_агента" ColumnName="Наименование агента" />
+                <ScalarProperty Name="Тип_агента" ColumnName="Тип агента" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
