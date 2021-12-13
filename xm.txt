@@ -1,0 +1,132 @@
+ d:DesignHeight="450" d:DesignWidth="800"
+      Title="AgentPage">
+    <Page.Resources>
+        <Style TargetType="ListViewItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding  Path=Value}" Value="true">
+                    <Setter Property="Background" Value="LightGreen"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Поиск" 
+                       Foreground="Black"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Width="200"
+                     Height="30"
+                     x:Name="txtSearch"
+                     TextChanged="txtSearch_TextChanged"></TextBox>
+            <ComboBox Name="cmbSort" Grid.Column="2" Width="200" Height="30" Foreground="Black" SelectionChanged="cmbSort_SelectionChanged" Background="Black" FontSize="15"/>
+            <ComboBox Name="cmbFiltr" Grid.Column="3" Width="200" Height="30" Foreground="Black" SelectionChanged="cmbFiltr_SelectionChanged" Background="Black" FontSize="15" SelectedIndex="0"/>
+
+
+        </Grid>
+        <ListView Name="LVAgent" Grid.Row="1" Height="Auto">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="800" Height="Auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Width="100" Height="100" Grid.Row="1" Stretch="Fill" HorizontalAlignment="Center" Margin="5" >
+                            <Image.Source>
+                                <Binding Path="ResourceLogoAgent">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/Resources/picture.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <Grid Grid.Column="1" Width="auto" Height="auto">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Height="15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path=Тип_агента}"
+                                           FontSize="15"
+                                           Foreground="Black"/>
+                                    <TextBlock Text=" | " Grid.Column="1" FontSize="15" Foreground="Black"/>
+                                    <TextBlock Text="{Binding Path=Наименование_агента}"
+                                           FontSize="15" Foreground="Black"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding StringFormat=Телефон{0}, Path=Номер_телефона}" FontSize="15" Foreground="Black"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding StringFormat=Приоритет {0}, Path=Приоритет}" FontSize="15" Foreground="Black"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="" FontSize="15" Foreground="Black"></TextBlock>
+                                    <TextBlock Text="{Binding StringFormat= Количество продаж за год {0}, Path=Количество_продаж_за_год}" FontSize="15" Foreground="Black"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                            <StackPanel Margin="15" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=Скидка_агента}" Foreground="Black" FontSize="15"></TextBlock>
+                                <TextBlock Text="%" Foreground="Black" FontSize="15"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="addAgent" Grid.Column="0" Width="200" Height="30" Click="addAgent_Click">Добавить</Button>
+            <Button x:Name="editAgent" Grid.Column="1" Width="200" Height="30" Click="editAgent_Click">Изменить</Button>
+            <Button x:Name="delAgent" Grid.Column="2" Width="200" Height="30" Click="delAgent_Click">Удалить</Button>
+        </Grid>
+        <Grid Grid.Row="2" Height="20">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Orientation="Horizontal" Margin="0 0 35 0">
+                <Image Height="20" Source="Resources/left.png" MouseDown="Image_MouseDown"/>
+                <Image Height="20" Source="/Resources/right.png" MouseDown="Image_MouseDown_1"/>
+            </StackPanel>
+        </Grid>
+    </Grid>

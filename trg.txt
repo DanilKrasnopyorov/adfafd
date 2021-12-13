@@ -1,0 +1,15 @@
+ALTER trigger [dbo].[TR_Agent_InsertUpdate] on [dbo].[agents]
+after Update,Insert
+as
+IF EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted) and UPDATE(Prioritet)
+Begin 
+insert into [dbo].[HistotyAgent] ([NameAgent],[PrioritetOld],[PrioritetNew])
+select d.NameAgent,d.Prioritet,i.Prioritet
+From deleted d inner join inserted i on d.ID = i.ID
+end;	
+IF EXISTS (SELECT * FROM Inserted) AND NOT EXISTS (SELECT * FROM deleted)
+BEGIN
+  Insert Into  [dbo].[HistotyAgent] ([NameAgent],[PrioritetOld],[PrioritetNew])
+	Select i.NameAgent,i.Prioritet,null
+	From inserted i
+END;

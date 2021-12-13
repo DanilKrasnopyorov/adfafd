@@ -1,0 +1,151 @@
+public partial class AgentPage : Page
+    {
+        List<View_1> agentsList;
+        List<View_1> agentsPageList;
+        IEnumerable<View_1> agentsSort;
+        int skipCounter = 0, takeCounter = 10;
+        public AgentPage()
+        {
+            InitializeComponent();
+            agentsList = SalesCompanyEntities.GetContext().View_1.ToList();
+            LVAgent.ItemsSource = agentsList;
+            List<string> sort=new List<string>();
+            sort.Add("Наименование↑");
+            sort.Add("Наименование↓");
+            sort.Add("Размер скидки↑");
+            sort.Add("Размер скидки↓");
+            sort.Add("Приоритет агента↑");
+            sort.Add("Приоритет агента↓");
+            cmbSort.ItemsSource = sort;
+
+            List<string> filtr = new List<string>();
+            filtr.Add("Все типы");
+            filtr.Add("ЗАО");
+            filtr.Add("МКК");
+            filtr.Add("МФО");
+            filtr.Add("ОАО");
+            filtr.Add("ООО");
+            filtr.Add("ПАО");
+
+            cmbFiltr.ItemsSource = filtr;
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                agentsSort = (IEnumerable<View_1>)SalesCompanyEntities.GetContext().View_1.ToList().Where(i => i.Наименование_агента.ToLower().Contains(txtSearch.Text.ToLower()) || i.Номер_телефона.ToLower().Contains(txtSearch.Text.ToLower()) || i.Тип_агента.ToLower().Contains(txtSearch.Text.ToLower()));
+                LVAgent.ItemsSource = agentsSort;
+            } else
+            {
+                LVAgent.ItemsSource = agentsList;
+            }
+        }
+
+        private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (cmbSort.SelectedIndex)
+            {
+                case 0:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().OrderBy(x => x.Наименование_агента);
+                    break;
+                case 1:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().OrderByDescending(x => x.Наименование_агента);
+                    break;
+                case 2:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().OrderBy(x => x.Скидка_агента);
+                    break;
+                case 3:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().OrderByDescending(x => x.Скидка_агента);
+                    break;
+                case 4:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().OrderBy(x => x.Приоритет);
+                    break;
+                case 5:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().OrderByDescending(x => x.Приоритет);
+                    break;
+            }
+        }
+
+        private void cmbFiltr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (cmbFiltr.SelectedIndex)
+            {
+                case 0:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList();
+                    break;
+                case 1:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().Where(item => item.Тип_агента=="ЗАО");
+                    break;
+                case 2:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().Where(x => x.Тип_агента == "МКК");
+                    break;
+                case 3:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().Where(x => x.Тип_агента == "МФО");
+                    break;
+                case 4:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().Where(x => x.Тип_агента == "ОАО");
+                    break;
+                case 5:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().Where(x => x.Тип_агента == "ООО");
+                    break;
+                case 6:
+                    LVAgent.ItemsSource = SalesCompanyEntities.GetContext().View_1.ToList().Where(x => x.Тип_агента == "ПАО");
+                    break;
+            }
+        }
+
+        private void addAgent_Click(object sender, RoutedEventArgs e)
+        {
+            Manager._frame.Navigate(new AddAgentPage(null));
+        }
+
+        private void delAgent_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void editAgent_Click(object sender, RoutedEventArgs e)
+        {
+            if (LVAgent.SelectedIndex != -1) {
+                View_1 view = LVAgent.SelectedItem as View_1;
+                Manager._frame.Navigate(new AddAgentPage(view));
+            }
+            else
+                MessageBox.Show("Вы не выбрали агента!");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            skipCounter -= 10;
+            if (skipCounter <= 0)
+            {
+                skipCounter = 0;
+                agentsPageList = agentsList;
+            }
+            agentsPageList = agentsList.OrderBy(x=>x.Id).Skip(skipCounter).Take(takeCounter).ToList();
+
+           
+            LVAgent.ItemsSource = agentsPageList;
+        }
+
+        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            skipCounter += 10;
+            agentsPageList = agentsList.OrderBy(x => x.Id).Skip(skipCounter).Take(takeCounter).ToList();
+          
+            if (skipCounter >= 45)
+            {
+                skipCounter = 10;
+                agentsPageList = agentsList;
+            }
+               
+            LVAgent.ItemsSource = agentsPageList;
+
+        }
+    }
